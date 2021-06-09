@@ -1,2 +1,2 @@
-/PluginSynth/PluginSynth/Builds/
+﻿/PluginSynth/PluginSynth/Builds/
 /PluginSynth/PluginSynth/JuceLibraryCode/
