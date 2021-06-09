@@ -1,3 +1,5 @@
 /Builds/
 /JuceLibraryCode/
 .DS_Store
+/PluginSynth/Builds/VisualStudio2019
+/PluginSynth/JuceLibraryCode
