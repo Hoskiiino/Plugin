@@ -9,6 +9,8 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "SynthVoice.h"
+#include "SynthSound.h"
 
 //==============================================================================
 /**
@@ -52,8 +54,15 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
-
+    juce::AudioProcessorValueTreeState apvts;
 private:
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginSynthAudioProcessor)
+ 
+    juce::Synthesiser synth;
+
+    juce::AudioProcessorValueTreeState::ParameterLayout createParams();
+    //void setParams();
+   
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginSynthAudioProcessor)
+
 };
