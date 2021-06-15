@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="QPKHkj" name="PluginSynth" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              pluginCharacteristicsValue="pluginIsSynth" pluginFormats="buildVST3">
+              pluginCharacteristicsValue="pluginIsSynth" pluginFormats="buildStandalone,buildVST3">
   <MAINGROUP id="YfDsMZ" name="PluginSynth">
     <GROUP id="{D2CA0163-1641-F3A5-7EB4-71176BC108B5}" name="Source">
       <FILE id="zulsvI" name="SynthSound.h" compile="0" resource="0" file="Source/SynthSound.h"/>

@@ -44,7 +44,7 @@ void SynthVoice::prepareToPlay(double sampleRate, int samplesPerBlock, int outpu
     reset();
 
     adsr.setSampleRate(sampleRate);
-   /* filterAdsr.setSampleRate(sampleRate);*/
+
 
     juce::dsp::ProcessSpec spec;
     spec.maximumBlockSize = samplesPerBlock;
@@ -74,18 +74,19 @@ void SynthVoice::renderNextBlock(juce::AudioBuffer< float >& outputBuffer, int s
 
     synthBuffer.clear();
 
-    for (int ch = 0; ch < synthBuffer.getNumChannels(); ++ch)
+   /* for (int ch = 0; ch < synthBuffer.getNumChannels(); ++ch)
     {
         auto* buffer = synthBuffer.getWritePointer(ch, 0);
 
-        /*for (int s = 0; s < synthBuffer.getNumSamples(); ++s)
+        for (int s = 0; s < synthBuffer.getNumSamples(); ++s)
         {
             buffer[s] = osc1[ch].processNextSample(buffer[s]) + osc2[ch].processNextSample(buffer[s]);
-        }*/
-    }
+        }
+    }*/
 
     juce::dsp::AudioBlock<float> audioBlock{ synthBuffer };
     gain.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
+    osc.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
     adsr.applyEnvelopeToBuffer(synthBuffer, 0, synthBuffer.getNumSamples());
 
    /* for (int ch = 0; ch < synthBuffer.getNumChannels(); ++ch)
