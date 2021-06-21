@@ -56,7 +56,7 @@ void SynthVoice::prepareToPlay(double sampleRate, int samplesPerBlock, int outpu
     gain.prepare(spec);
 
     gain.prepare(spec);
-    gain.setGainLinear(0.07f);
+    gain.setGainLinear(0.3f);
 
     adsr.setParameters(adsrParams);
 
@@ -69,6 +69,7 @@ void SynthVoice::updateADSR(const float attack, const float decay, const float s
     adsrParams.decay = decay;
     adsrParams.sustain = sustain;
     adsrParams.release = release;
+    adsr.setParameters(adsrParams);
 
 }
 

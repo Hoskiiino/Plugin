@@ -155,6 +155,7 @@ void PluginSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
             auto& sustain = *apvts.getRawParameterValue("SUSTAIN");
             auto& release = *apvts.getRawParameterValue("RELEASE");
             voice->updateADSR(attack.load(), decay.load(), sustain.load(), release.load());
+            
         }
     }
     
